@@ -16,7 +16,7 @@ const Trivia = ({ data, setStop, questionNumber, setQuestionNumber }) => {
     letsPlay();
   }, [letsPlay]);
 
-  
+
   useEffect(() => {
     setQuestion(data[questionNumber - 1]);
   }, [data, questionNumber]);
@@ -33,16 +33,16 @@ const Trivia = ({ data, setStop, questionNumber, setQuestionNumber }) => {
     delay(2000, () => {
       setClassName(a.correct ? "answer correct" : "answer wrong");
     });
-    delay(5000, () => {
+    delay(4000, () => {
       if (a.correct) {
         correctAnswer();
-        delay(1000, () => {
+        delay(5000, () => {
           setQuestionNumber((prevQs) => prevQs + 1);
           setSelectedAnswer(null);
         });
       } else {
         wrongAnswer();
-        delay(1000, () => {
+        delay(3000, () => {
           setStop(true);
         });
       }
